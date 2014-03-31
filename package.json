@@ -1,0 +1,21 @@
+{
+  "name": "node-app-review-time",
+  "version": "1.0.0",
+  "description": "Fetches app review times from twitter",
+  "main": "index.js",
+  "author": "Nathan Bowser <nathan.bowser@spiderstrategies.com>",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -R spec test"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^1.1.12",
+    "moment": "^2.5.1",
+    "request": "^2.34.0",
+    "event-stream": "^3.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "nock": "^0.27.3"
+  }
+}

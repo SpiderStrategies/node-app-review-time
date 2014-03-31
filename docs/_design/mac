@@ -1,0 +1,18 @@
+{
+  "_id": "_design/mac",
+  "_rev": "3-e8c93e71f6daee849da3e29e2a381152",
+  "language": "javascript",
+  "views": {
+    "average": {
+      "map": "function(doc) {\n  if (doc.types.indexOf('#macreviewtime') !== -1) {\n    var dates = doc.created_at.split(' ')\n   \n    emit([dates[5], doc.day.substr(5,6), doc.day], doc.days);\n  }\n    \n}",
+      "reduce": "_stats"
+    },
+    "all": {
+      "map": "function(doc) { if (doc.types.indexOf('#macreviewtime') !== -1) { emit(null, doc);\n   } }"
+    }
+  },
+  "lists": {
+    "last-3-days": "function (head, req) { var sum = 0; var count = 0; \n while (row = getRow()){ sum += row.value.sum; count += row.value.count; } \n var out = sum / count; var result = {value: out, formatted: out.toFixed(1) + ' days'}; send(JSON.stringify(result));}",
+    "chart": "function (head, req) { var sum = 0, rows = []; while (row = getRow()){ rows.unshift([row.key[2], (row.value.sum / row.value.count)]) } \n rows.unshift(['Date', 'daily average']); send(rows.join('\\n')); }"
+  }
+}
