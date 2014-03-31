@@ -11,3 +11,6 @@ that is displayed on appreviewtimes.com
 
 ### Usage
 Store your twitter and and couch config info in config.json.
+
+### Updates
+We run this every half hour to collect the most recent information, so the dashboard is updated.
