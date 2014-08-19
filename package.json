@@ -1,6 +1,6 @@
 {
   "name": "node-app-review-time",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fetches app review times from twitter",
   "main": "index.js",
   "author": "Nathan Bowser <nathan.bowser@spiderstrategies.com>",
